@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: #56baed;
+}
+.play-board , .select-box , .result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+}
+.select-box {
+    background-color: #fff;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+}
+.select-box.hide {
+    opacity: 0;
+    cursor: none;
+    transform: translate(-50%,-50%) scale(0.9);
+    max-width: 240px;
+}
+header {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 20px 0;
+    text-align: center;
+}
+.options {
+    display: flex;
+    width: 100%;
+}
+.options button {
+    width: 90%;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #56baed;
+    transition: all 0.3s ease;
+}
+.options small {
+    margin: 0 10px;
+    font-size: 26px;
+    color: #ff0909;
+}
+.options button:hover, 
+.result-box .play-again button:hover {
+    transform: scale(0.96);
+}
+.play-board .details {
+    padding: 7px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.play-board {
+    opacity: 0;
+    cursor: none;
+    transform: translate(-50%,-50%) scale(0.9);
+    z-index: -1;
+}
+.play-board.show {
+    opacity: 1;
+    cursor: auto;
+    transform: translate(-50%,-50%) scale(1);
+    z-index: 10;
+}
+.play-board .details .players {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+}
+.play-board .details span {
+    color: #56baed;
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.players.active span:first-child {
+    color: #56baed;
+}
+.players.active span:nth-child(2) {
+    color: #fff;
+}
+.players.active .slider {
+    left: 50%;
+}
+.details span:first-child {
+    color: #fff;
+}
+.details .slider {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* left: 50%; */
+    background-color: #56baed;
+    width: 50%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+.play-board .play-area {
+    margin-top: 20px;
+}
+.play-board section {
+    display: flex;
+}
+.play-area section span {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 2px;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #56baed;
+        font-size: 40px;
+        line-height: 80px;
+        text-align: center;
+}
+
+
+.result-box {
+        opacity: 0;
+        cursor: none;
+        transform: translate(-50%,-50%) scale(0.9);
+        z-index: -1;
+    background-color: #fff;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.result-box.show {
+    opacity: 1;
+    cursor: auto;
+    transform: translate(-50%,-50%) scale(1);
+    z-index: 10;
+}
+.result-box .won-text {
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+.result-box .won-text small {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 5px;
+    color: crimson;
+}
+.result-box .play-again {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.result-box .play-again button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #56baed;
+    transition: all 0.3s ease;
+}
